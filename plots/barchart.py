@@ -8,11 +8,7 @@ def main():
         dtype='f8')  
     y_var = dataset[:, 0]
     x_var = dataset[:, 1]
-    a_mat = np.vstack([x_var, np.ones(len(x_var))]).T
-    slope, intercept = np.linalg.lstsq(a_mat, y_var)[0]
-    print "Y =", slope, "X", intercept
-    plt.plot(x_var, y_var, 'o', label='Original data', markersize=10)
-    plt.plot(x_var, slope*x_var + intercept, 'r', label='Fitted line')
+    plt.bar(x_var, y_var, 0.75, color="blue")
     plt.legend()
     plt.show()
 
